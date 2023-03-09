@@ -28,6 +28,7 @@ export const Background = () => {
       <Container fluid style={{ display: "block",backgroundColor: backGround, height: "100vh" }}>
         <Row>
           <Col sm={3} className='mt-4'>
+            <label>Color de fondo:</label>
             <FormSelect size="sm" onChange={evt => setBackGround(evt.target.value)} >
               {options(background)}
             </FormSelect>

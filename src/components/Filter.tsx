@@ -53,8 +53,7 @@ export const Filter = () => {
     const [filtered, setFiltered] = useState<string[]>([]);
     const filter: any = (evt: React.KeyboardEvent<HTMLInputElement>) => {
         evt.preventDefault();
-        console.log((evt.target as HTMLInputElement).value);
-        setFiltered(fruits.filter(val => val.toLowerCase().match((evt.target as HTMLInputElement).value)))
+        setFiltered(fruits.filter(val => val.toLowerCase().match((evt.target as HTMLInputElement).value.toLowerCase())))
     }
     return (
         <>
@@ -62,19 +61,18 @@ export const Filter = () => {
             <Container fluid>
                 <Row>
                     <Col sm="auto" className='mt-4'>
+                        <label>Buscador de frutas:</label>
                         <FormControl size="sm" onKeyUp={filter} />
                     </Col>
                 </Row>
                 <Row className='mt-2'>
                     <Col sm="auto">
-                       {filtered.map(val => {
-                        return (
-                            <>
+                        {filtered.map(val => (
+                            <div key={val}>
                                 {val}
-                                <br/>
-                            </>
-                        )
-                       })}
+                                <br />
+                            </div>
+                        ))}
                     </Col>
                 </Row>
             </Container>

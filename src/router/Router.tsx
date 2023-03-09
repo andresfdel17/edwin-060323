@@ -9,7 +9,7 @@ import { View404 } from '../components/View404'
 
 export const Router = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename='/edwin-060323'>
       <Routes>
         <Route path='/' element={<NNavbar />} />
         <Route path='/background' element={<Background />} />
